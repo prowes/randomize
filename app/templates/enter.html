@@ -1,0 +1,26 @@
+
+<html>
+    <head>
+        <title>Random number generator</title>
+    </head>
+    <body>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.down_border.label }}<br>
+            {{ form.down_border(size=7) }}
+            {% for error in form.down_border.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.up_border.label }}<br>
+            {{ form.up_border(size=7) }}
+            {% for error in form.up_border.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </body>
+</html>
